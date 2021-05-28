@@ -1,7 +1,6 @@
 import 'reflect-metadata';
 import './infra/mongoose/connection';
 
-
 import express from 'express';
 import cors from 'cors';
 import routes from './routes';
@@ -14,5 +13,6 @@ app.use(express.json());
 app.use(routes);
 
 app.listen(3333, () => {
+  // eslint-disable-next-line no-console
   console.log('Server started on por 3333!');
 });
