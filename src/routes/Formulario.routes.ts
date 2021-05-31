@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { container } from 'tsyringe';
 
 import CriarFormularioService from '../services/Formulario/CriarFormulario/CriarFormularioService';
 import Formulario from '../schemas/Formulario';
@@ -36,7 +37,7 @@ FormularioRoutes.post('/', async (request, response) => {
   try {
     const { nome, descricao, publicado } = request.body;
 
-    const createForm = new CriarFormularioService();
+    const createForm = container.resolve(CriarFormularioService);
 
     const id = await createForm.executar({
       nome,

@@ -1,4 +1,8 @@
+import { injectable, inject } from 'tsyringe';
+
 import Formulario from '../../../schemas/Formulario';
+
+import LoggerProvider from '../../../shared/adapters/models/LoggerProvider';
 
 interface Request {
   nome: string,
@@ -6,14 +10,24 @@ interface Request {
   publicado: boolean,
 }
 
+@injectable()
 class CriarFormularioService {
-  public async executar({ nome, descricao, publicado } : Request): Promise<string> {
+  constructor(
+    @inject('LoggerProvider') private loggerProvider: LoggerProvider,
+  ) {
+  }
 
-    var formulario = await Formulario.create({
+  public async executar({ nome, descricao, publicado } : Request): Promise<string> {
+    const formulario = await Formulario.create({
       nome,
       descricao,
       publicado,
     });
+
+    this.loggerProvider.log(
+      'warn',
+      '[Formulario Criado]',
+    );
 
     return formulario._id;
   }

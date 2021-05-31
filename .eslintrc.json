@@ -19,6 +19,9 @@
     "camelcase": "off",
     "class-methods-use-this": "off",
     "no-underscore-dangle": "off",
+    "no-useless-constructor": "off",
+    "eslint-disable-next-line": "off",
+    "ban-types": "off",
     "import/no-extraneous-dependencies": [
       "error",
       {
