@@ -21,7 +21,22 @@
     "no-underscore-dangle": "off",
     "no-useless-constructor": "off",
     "eslint-disable-next-line": "off",
-    "ban-types": "off",
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "types": {
+          "String": false,
+          "Boolean": false,
+          "Number": false,
+          "Symbol": false,
+          "{}": false,
+          "Object": false,
+          "object": false,
+          "Function": false
+        },
+        "extendDefaults": true
+      }
+    ],
     "import/no-extraneous-dependencies": [
       "error",
       {
