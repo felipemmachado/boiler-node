@@ -7,6 +7,7 @@ import './shared/mongoose/connection';
 import express from 'express';
 import cors from 'cors';
 import 'express-async-errors';
+
 import TokenExpiredError from './shared/errors/TokenExpiredError';
 import routes from './routes';
 
@@ -22,7 +23,6 @@ app.use(
     err: Error,
     req: express.Request,
     res: express.Response,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     _: express.NextFunction,
   ) => {
     if (process.env.NODE_ENV !== 'production') {
