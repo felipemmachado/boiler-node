@@ -7,6 +7,10 @@
     "airbnb-base",
     "plugin:@typescript-eslint/recommended"
   ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVroutesersion": 12,

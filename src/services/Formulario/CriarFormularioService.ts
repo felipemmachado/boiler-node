@@ -13,8 +13,7 @@ interface Request {
 class CriarFormularioService {
   constructor(
     @inject('LoggerProvider') private loggerProvider: LoggerProvider,
-  ) {
-  }
+  ) { }
 
   public async executar({ nome, descricao, publicado } : Request): Promise<string> {
     const formulario = await Formulario.create({

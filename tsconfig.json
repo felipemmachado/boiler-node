@@ -22,8 +22,8 @@
       "@schemas/*": ["schemas/*"],
       "@services/*": ["services/*"],
       "@routes/*": ["routes/*"],
-      "@configs/*": ["configs/*"],
-      "@shared/*": ["shared/*"]
+      "@shared/*": ["shared/*"],
+      "@configs/*": ["configs/*"]
     }
   },
   "include": ["src"],
