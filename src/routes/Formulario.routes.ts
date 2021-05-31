@@ -3,7 +3,11 @@ import { Router } from 'express';
 import CriarFormularioService from '../services/Formulario/CriarFormulario/CriarFormularioService';
 import Formulario from '../schemas/Formulario';
 
+import garantirAutenticacao from './middlewares/garantirAutenticacao';
+
 const FormularioRoutes = Router();
+
+// FormularioRoutes.use(garantirAutenticacao);
 
 FormularioRoutes.get('/', async (request, response) => {
   try {

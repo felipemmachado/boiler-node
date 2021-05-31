@@ -6,7 +6,7 @@ const mongoUserPass = mongoConfig.username
   ? `${mongoConfig.username}:${mongoConfig.password}@`
   : '';
 
-console.warn("cocacao", `mongodb://${mongoUserPass}${mongoConfig.host}:${mongoConfig.port}/${mongoConfig.database}`)
+console.warn('cocacao', `mongodb://${mongoUserPass}${mongoConfig.host}:${mongoConfig.port}/${mongoConfig.database}`);
 
 mongoose.connect(
   `mongodb://${mongoUserPass}${mongoConfig.host}:${mongoConfig.port}/${mongoConfig.database}`,
