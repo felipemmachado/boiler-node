@@ -2,7 +2,7 @@ import { injectable, inject } from 'tsyringe';
 
 import LoggerProvider from '@shared/adapters/models/LoggerProvider';
 import Formulario from '@schemas/Formulario';
-import CriarFormularioServiceValidator from './CriarFormularioService.validator';
+import CriarFormularioServiceValidator from '@services/Formulario/CriarFormulario/CriarFormularioService.validator';
 
 export interface CriarFormularioRequest {
   nome: string,
