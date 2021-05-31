@@ -1,3 +1,5 @@
+import { container } from 'tsyringe';
+
 import Pergunta from '@schemas/Pergunta';
 import OpcoesResposta from '@schemas/OpcaoResposta';
 import Formulario from '@schemas/Formulario';
@@ -20,7 +22,7 @@ describe('Formulario', () => {
   });
 
   it('deve ser capaz de salvar um novo formulario', async () => {
-    const criarFormularioService = new CriarFormularioService();
+    const criarFormularioService = container.resolve(CriarFormularioService);
 
     const nome = 'Formulario X';
     const descricao = 'Formulário que faz várias coisas';
