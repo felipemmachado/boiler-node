@@ -10,6 +10,7 @@ import '@shared/adapters/index';
 import '@shared/mongoose/connection';
 
 import TokenExpiredError from '@shared/errors/TokenExpiredError';
+import ValidatorError from '@shared/errors/ValidatorError';
 import routes from './routes';
 
 const app = express();
@@ -28,7 +29,7 @@ app.use(
   ) => {
     console.log('error', err);
     if (process.env.NODE_ENV !== 'production') {
-      console.log(err.stack);
+      console.log('error', err.stack);
     }
 
     if (err instanceof TokenExpiredError) {
@@ -36,6 +37,11 @@ app.use(
         code: 'token.expired',
         message: err.message,
       });
+    }
+
+    if (err instanceof ValidatorError) {
+      console.log('erros no evento', err);
+      return res.status(400).json(err);
     }
 
     return res.status(500).json({ error: 'Internal server error' });

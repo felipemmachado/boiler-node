@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { container } from 'tsyringe';
 
-import CriarFormularioService from '@services/Formulario/CriarFormularioService';
+import CriarFormularioService from '@services/Formulario/CriarFormulario/CriarFormularioService';
 import Formulario from '@schemas/Formulario';
 
 // import garantirAutenticacao from './middlewares/garantirAutenticacao';
@@ -34,26 +34,22 @@ FormularioRoutes.get('/:id', async (request, response) => {
 });
 
 FormularioRoutes.post('/', async (request, response) => {
-  try {
-    const { nome, descricao, publicado } = request.body;
+  const { nome, descricao, publicado } = request.body;
 
-    const createForm = container.resolve(CriarFormularioService);
+  const createForm = container.resolve(CriarFormularioService);
 
-    const id = await createForm.executar({
-      nome,
-      descricao,
-      publicado,
-    });
+  const id = await createForm.executar({
+    nome,
+    descricao,
+    publicado,
+  });
 
-    return response.json({
-      id,
-      nome,
-      descricao,
-      publicado,
-    });
-  } catch (err) {
-    return response.status(400).json({ error: err.message });
-  }
+  return response.json({
+    id,
+    nome,
+    descricao,
+    publicado,
+  });
 });
 
 export default FormularioRoutes;

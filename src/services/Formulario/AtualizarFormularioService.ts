@@ -1,6 +1,6 @@
 import Formulario from '@schemas/Formulario';
 
-interface Request {
+export interface AtualizarFormularioRequest {
   id: string,
   nome: string,
   descricao: string,
@@ -8,17 +8,15 @@ interface Request {
 }
 
 class AtualizarFormularioService {
-  public async executar({
-    id, nome, descricao, publicado,
-  } : Request): Promise<void> {
-    const form = await Formulario.findOne({ _id: id });
+  public async executar(request : AtualizarFormularioRequest): Promise<void> {
+    const form = await Formulario.findOne({ _id: request.id });
 
     if (!form) { throw Error('Form not found'); }
 
     await form.update({
-      nome,
-      descricao,
-      publicado,
+      nome: request.nome,
+      descricao: request.descricao,
+      publicado: request.publicado,
     });
   }
 }

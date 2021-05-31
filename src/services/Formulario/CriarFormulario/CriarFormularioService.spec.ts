@@ -4,7 +4,7 @@ import Pergunta from '@schemas/Pergunta';
 import OpcoesResposta from '@schemas/OpcaoResposta';
 import Formulario from '@schemas/Formulario';
 import MongoMock from '@shared/tests/MongoMock';
-import CriarFormularioService from '@services/Formulario/CriarFormularioService';
+import CriarFormularioService from '@services/Formulario/CriarFormulario/CriarFormularioService';
 
 describe('Formulario', () => {
   beforeAll(async () => {

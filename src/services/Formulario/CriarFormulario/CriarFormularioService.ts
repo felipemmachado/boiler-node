@@ -2,8 +2,9 @@ import { injectable, inject } from 'tsyringe';
 
 import LoggerProvider from '@shared/adapters/models/LoggerProvider';
 import Formulario from '@schemas/Formulario';
+import CriarFormularioServiceValidator from './CriarFormularioService.validator';
 
-interface Request {
+export interface CriarFormularioRequest {
   nome: string,
   descricao: string,
   publicado: boolean,
@@ -15,11 +16,13 @@ class CriarFormularioService {
     @inject('LoggerProvider') private loggerProvider: LoggerProvider,
   ) { }
 
-  public async executar({ nome, descricao, publicado } : Request): Promise<string> {
+  public async executar(request : CriarFormularioRequest): Promise<string> {
+    new CriarFormularioServiceValidator().Valid(request);
+
     const formulario = await Formulario.create({
-      nome,
-      descricao,
-      publicado,
+      nome: request.nome,
+      descricao: request.descricao,
+      publicado: request.publicado,
     });
 
     this.loggerProvider.log(
