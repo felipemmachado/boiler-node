@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import 'dotenv/config';
 
 import './shared/adapters';
-import './infra/mongoose/connection';
+import './shared/mongoose/connection';
 
 import express from 'express';
 import cors from 'cors';

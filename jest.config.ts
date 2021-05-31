@@ -28,7 +28,7 @@ module.exports = {
   testEnvironment: 'node',
 
   setupFiles: [
-    '<rootDir>/src/tests/setupTests.ts',
+    '<rootDir>/src/shared/tests/setupTests.ts',
   ],
 
   testMatch: [
