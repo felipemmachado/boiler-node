@@ -1,8 +1,7 @@
 import { injectable, inject } from 'tsyringe';
 
-import Formulario from '../../schemas/Formulario';
-
-import LoggerProvider from '../../shared/adapters/models/LoggerProvider';
+import LoggerProvider from '@shared/adapters/models/LoggerProvider';
+import Formulario from '@schemas/Formulario';
 
 interface Request {
   nome: string,

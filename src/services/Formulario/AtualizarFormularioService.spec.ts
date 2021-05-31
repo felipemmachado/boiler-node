@@ -1,8 +1,8 @@
 import Pergunta from '@schemas/Pergunta';
 import OpcoesResposta from '@schemas/OpcaoResposta';
 import Formulario from '@schemas/Formulario';
-import MongoMock from '../../shared/tests/MongoMock';
-import AtualizarFormularioService from './AtualizarFormularioService';
+import MongoMock from '@shared/tests/MongoMock';
+import AtualizarFormularioService from '@services/Formulario/AtualizarFormularioService';
 
 describe('Formulario', () => {
   beforeAll(async () => {
