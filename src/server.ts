@@ -1,8 +1,10 @@
 import 'reflect-metadata';
+import 'dotenv/config';
 import './infra/mongoose/connection';
 
 import express from 'express';
 import cors from 'cors';
+import 'express-async-errors';
 import TokenExpiredError from './shared/errors/TokenExpiredError';
 import routes from './routes';
 
