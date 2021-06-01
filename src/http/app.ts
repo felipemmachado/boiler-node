@@ -11,14 +11,14 @@ import '@shared/mongoose/connection';
 
 import TokenExpiredError from '@shared/errors/TokenExpiredError';
 import ValidatorError from '@shared/errors/ValidatorError';
-import routes from './api/v1';
+import v1Routes from './api/v1';
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.use(routes);
+app.use(v1Routes);
 
 app.use(
   (
