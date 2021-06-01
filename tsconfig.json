@@ -19,9 +19,8 @@
     "typeRoots": ["node_modules/@types"],
     "types": ["jest", "node"],
     "paths": {
-      "@schemas/*": ["schemas/*"],
-      "@services/*": ["services/*"],
-      "@routes/*": ["routes/*"],
+      "@modules/*": ["modules/*"],
+      "@api/*": ["api/*"],
       "@shared/*": ["shared/*"],
       "@configs/*": ["configs/*"]
     }

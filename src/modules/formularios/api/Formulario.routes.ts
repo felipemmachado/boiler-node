@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import { container } from 'tsyringe';
 
-import CriarFormularioService from '@services/Formulario/CriarFormulario/CriarFormularioService';
-import Formulario from '@schemas/Formulario';
+import CriarFormularioService from '@modules/formularios/services/CriarFormulario/CriarFormularioService';
+import Formulario from '@modules/formularios/schemas/Formulario';
 
 // import garantirAutenticacao from './middlewares/garantirAutenticacao';
 

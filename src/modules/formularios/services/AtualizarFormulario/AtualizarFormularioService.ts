@@ -1,4 +1,4 @@
-import Formulario from '@schemas/Formulario';
+import Formulario from '@modules/formularios/schemas/Formulario';
 
 export interface AtualizarFormularioRequest {
   id: string,

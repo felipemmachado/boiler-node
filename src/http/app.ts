@@ -11,7 +11,7 @@ import '@shared/mongoose/connection';
 
 import TokenExpiredError from '@shared/errors/TokenExpiredError';
 import ValidatorError from '@shared/errors/ValidatorError';
-import routes from './routes';
+import routes from './api/v1';
 
 const app = express();
 

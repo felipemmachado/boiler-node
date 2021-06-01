@@ -1,10 +1,10 @@
 import { container } from 'tsyringe';
 
-import Pergunta from '@schemas/Pergunta';
-import OpcoesResposta from '@schemas/OpcaoResposta';
-import Formulario from '@schemas/Formulario';
+import Pergunta from '@modules/formularios/schemas/Pergunta';
+import OpcoesResposta from '@modules/formularios/schemas/OpcaoResposta';
+import Formulario from '@modules/formularios/schemas/Formulario';
 import MongoMock from '@shared/tests/MongoMock';
-import CriarFormularioService from '@services/Formulario/CriarFormulario/CriarFormularioService';
+import CriarFormularioService from '@modules/formularios/services/CriarFormulario/CriarFormularioService';
 
 describe('Formulario', () => {
   beforeAll(async () => {
