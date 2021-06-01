@@ -17,7 +17,7 @@ class CriarFormularioService {
   ) { }
 
   public async executar(request : CriarFormularioRequest): Promise<string> {
-    new CriarFormularioServiceValidator().Valid(request);
+    new CriarFormularioServiceValidator(request).validar();
 
     const formulario = await Formulario.create({
       nome: request.nome,

@@ -30,9 +30,12 @@ describe('Formulario', () => {
 
     try {
       await criarFormularioService.executar({ nome, descricao, publicado });
-      expect(true).toBe(false);
     } catch (e) {
-      expect(true).toBe(true);
+      expect(e.errors).toEqual(
+        expect.objectContaining({
+          nome: ['The nome field is required.'],
+        }),
+      );
     }
   });
 

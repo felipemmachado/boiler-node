@@ -19,7 +19,36 @@ describe('Formulario', () => {
     await OpcoesResposta.deleteMany({});
   });
 
-  it('deve ser capaz de atualizar um formulario', async () => {
+  test('deve retornar erro ao não encontrar um formulario com id válido', async () => {
+    const atualizarFormularioService = new AtualizarFormularioService();
+    const nome = 'Novo';
+    const descricao = 'Novo';
+    const publicado = false;
+    try {
+      await atualizarFormularioService.executar({
+        id: '60b133d09edacc4268e9f40d', nome, descricao, publicado,
+      });
+    } catch (e) {
+      expect(e.message).toEqual('Form not found');
+    }
+  });
+
+  test('deve retornar erro ao não encontrar um formulario com id invalido', async () => {
+    const atualizarFormularioService = new AtualizarFormularioService();
+
+    const nome = 'Novo';
+    const descricao = 'Novo';
+    const publicado = false;
+    try {
+      await atualizarFormularioService.executar({
+        id: 'fdjjsdfasdfds', nome, descricao, publicado,
+      });
+    } catch (e) {
+      expect(e.message).toEqual('Cast to ObjectId failed for value "fdjjsdfasdfds" (type string) at path "_id" for model "Formulario"');
+    }
+  });
+
+  test('deve ser capaz de atualizar um formulario', async () => {
     const atualizarFormularioService = new AtualizarFormularioService();
 
     let nome = 'Novo';

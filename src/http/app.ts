@@ -40,7 +40,6 @@ app.use(
     }
 
     if (err instanceof ValidatorError) {
-      console.log('erros no evento', err);
       return res.status(400).json(err);
     }
 

@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
-import formulariosRouter from '@modules/formularios/api';
+import FormularioRoutes from '@modules/formularios/api/Formulario';
 
 const v1Router = Router();
 
-v1Router.use('/formularios', formulariosRouter);
+v1Router.use('/formularios', FormularioRoutes);
 
 export default v1Router;
