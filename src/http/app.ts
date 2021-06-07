@@ -7,7 +7,6 @@ import cors from 'cors';
 import 'express-async-errors';
 
 import '@shared/adapters/index';
-import '@shared/mongoose/connection';
 
 import TokenExpiredError from '@shared/errors/TokenExpiredError';
 import ValidatorError from '@shared/errors/ValidatorError';
